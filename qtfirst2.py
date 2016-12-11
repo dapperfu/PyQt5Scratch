@@ -16,6 +16,7 @@ last edited: January 2015
 import sys
 from PyQt5.QtWidgets import QWidget, QMessageBox, QApplication
 
+from mainwindow_test import Ui_MainWindow
 
 class Example(QWidget):
 
