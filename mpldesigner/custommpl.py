@@ -9,7 +9,7 @@ Ui_MainWindow, QMainWindow = loadUiType('window.ui')
         
 class MainWindow(QMainWindow, Ui_MainWindow):
     def __init__(self, ):
-        super(MainWindow, self).__init__()
+        super(self.__class__, self).__init__()
         self.setupUi(self)
         self.fig_dict = {}
 
@@ -20,7 +20,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def changefig(self, item):
         text = item.text()
-        print(text)
+        print("item.text: "+text)
         self.rmmpl()
         self.addmpl(self.fig_dict[text])
 
