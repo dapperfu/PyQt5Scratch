@@ -135,6 +135,9 @@
    <property name="text">
     <string>New</string>
    </property>
+   <property name="statusTip">
+    <string>New...</string>
+   </property>
    <property name="shortcut">
     <string>Ctrl+N</string>
    </property>
@@ -142,6 +145,9 @@
   <action name="actionOpen">
    <property name="text">
     <string>Open</string>
+   </property>
+   <property name="statusTip">
+    <string>Open...</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+O</string>
