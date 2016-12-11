@@ -3,16 +3,12 @@ first: MyFirstQtDesignerApp.ipynb mainwindow_test.py
 	jupyter nbconvert --to=python MyFirstQtDesignerApp.ipynb
 	python3 MyFirstQtDesignerApp.py
 
-.PHONY: window
-window: mainwindow_test.ui
-	pyuic5 mainwindow_test.ui -o mainwindow_test.py
-
-.PHONY: dialog
-dialog: dialog_test.ui
-	pyuic5 dialog_test.ui -o dialog_test.py
-
-
 .PHONY: designer
 designer:
 	designer *.ui &
 
+window: mainwindow_test.ui
+	pyuic5 mainwindow_test.ui -o mainwindow_test.py
+
+dialog: dialog_test.ui
+	pyuic5 dialog_test.ui -o dialog_test.py
