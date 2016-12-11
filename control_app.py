@@ -77,11 +77,15 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def makeplot(self):
         self.plot_axis.plot(np.random.rand(5))
         
-        
+        try:
+            self.mplvl.removeWidget(self.canvas)
+            self.canvas.close()
+        except:
+            pass            
+            
         self.canvas = FigureCanvas(self.fig)
         self.mplvl.addWidget(self.canvas)
         self.canvas.draw()
-        
 
 
     def slider_value_change(self,):
