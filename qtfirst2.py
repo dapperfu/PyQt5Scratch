@@ -2,14 +2,14 @@
 # -*- coding: utf-8 -*-
 
 """
-ZetCode PyQt5 tutorial 
+ZetCode PyQt5 tutorial
 
-This program shows a confirmation 
+This program shows a confirmation
 message box when we click on the close
-button of the application window. 
+button of the application window.
 
 author: Jan Bodnar
-website: zetcode.com 
+website: zetcode.com
 last edited: January 2015
 """
 
@@ -18,34 +18,38 @@ from PyQt5.QtWidgets import QWidget, QMessageBox, QApplication
 
 
 class Example(QWidget):
-    
+
     def __init__(self):
         super().__init__()
-        
+
         self.initUI()
-        
-        
-    def initUI(self):               
-        
-        self.setGeometry(300, 300, 250, 150)        
-        self.setWindowTitle('Hello World')    
+
+
+    def initUI(self):
+
+        screenX = 100
+        screenY = 100
+        windowWidth = 400
+        windowHeight = 250
+        self.setGeometry(screenX, screenY, windowWidth, windowHeight)
+        self.setWindowTitle('Hello World')
         self.show()
-        
-        
+
+
     def closeEvent(self, event):
-        
+
         reply = QMessageBox.question(self, 'Message',
-            "Are you sure to quit?", QMessageBox.Yes | 
+            "Are you sure to quit?", QMessageBox.Yes |
             QMessageBox.No, QMessageBox.No)
 
         if reply == QMessageBox.Yes:
             event.accept()
         else:
-            event.ignore()        
-        
-        
+            event.ignore()
+
+
 if __name__ == '__main__':
-    
+
     app = QApplication(sys.argv)
     ex = Example()
     sys.exit(app.exec_())
