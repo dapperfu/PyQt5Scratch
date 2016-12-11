@@ -21,6 +21,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         super(self.__class__, self).__init__()
         self.setupUi(self)
         self.pushButton.clicked.connect(self.browse_folder)
+        #self.actionAbout.connect(self.browse_folder)
+        self.statusBar().showMessage("All hail matplotlib!", 5000)
         #self.pushButton.clicked.connect(self.actionAbout)
         
     def browse_folder(self,):
