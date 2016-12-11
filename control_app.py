@@ -17,14 +17,17 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # Simple reason why we use it here is that it allows us to
         # access variables, methods etc in the design.py file
         super(self.__class__, self).__init__()
-        self.setupUi(self)  # This is defined in design.py file automatically
-        self.actionAbout.toggled.connect(self.actionAbout99)        
+        self.setupUi(self) 
         
-    def actionAbout99(self):
-        QtWidgets.QMessageBox.about(self, "About",
-                                    """Copyright 2016 Jed Frey
-                                    
-This program is a simple GUI example for controls.""")
+    def actionAbout(self):
+        print("Hello World")
+        
+    
+    def actionEaster_Eggs(self,):
+        print("Hello Easter Egg")
+ #       QtWidgets.QMessageBox.about(self, "About",
+#                                    """Copyright 2016 Jed Frey
+#                                This program is a simple GUI example for controls.""")
         
    
 if __name__ == '__main__':
