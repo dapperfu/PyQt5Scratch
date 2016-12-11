@@ -10,8 +10,12 @@ from PyQt5 import QtWidgets
 import sys
 import numpy as np
 
-from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.figure import Figure
+
+from matplotlib.backends.backend_qt5agg import (
+    FigureCanvasQTAgg as FigureCanvas,
+    NavigationToolbar2QT as NavigationToolbar)
+    
 
 Ui_MainWindow, QMainWindow = loadUiType('control_gui.ui')
 
@@ -44,8 +48,6 @@ class StaticControlCanvas(ControlCanvas):
         t = np.arange(0.0, 3.0, 0.01)
         s = np.sin(2*np.pi*t)
         self.axes.plot(t, s)
-
-
         
 class MainWindow(QMainWindow, Ui_MainWindow):  
 #class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
@@ -62,7 +64,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         
         self.actionQuit.triggered.connect(self.close)
 
-
+    def addmpl(self, fig):
+        self.canvas = FigureCanvas(fig)
+        self.mplvl.addWidget(self.canvas)
+        self.canvas.draw()
+        self.toolbar = NavigationToolbar(self.canvas, self.mplwindow, coordinates=True)
+        self.mplvl.addWidget(self.toolbar)
         
         
         self.statusBar().showMessage("", 5000)
