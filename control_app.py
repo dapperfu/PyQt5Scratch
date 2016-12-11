@@ -93,22 +93,15 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def slider_value_change(self,):
         print(self.horizontalSlider.value())
         self.lineEdit.value=str(self.horizontalSlider.value())
-        
-    def browse_folder(self,):
-        QtWidgets.QMessageBox.about(self, "About", """Copyright 2016 Jed Frey""")
 
     def actionAbout(self):
-        print("Hello World")
+        QtWidgets.QMessageBox.about(self, "About", """Copyright 2016 Jed Frey""")
 
     def actionEaster_Eggs(self,):
-        print("Hello Easter Egg")
- #       QtWidgets.QMessageBox.about(self, "About",
-#                                    """Copyright 2016 Jed Frey
-#                                This program is a simple GUI example for controls.""")
+        QtWidgets.QMessageBox.about(self, "EasterEgg", """Copyright 2016 Jed Frey""")
         
    
 if __name__ == '__main__':
-
     app = QtWidgets.QApplication(sys.argv)  # A new instance of QApplication
     main = MainWindow() 
     main.show()
