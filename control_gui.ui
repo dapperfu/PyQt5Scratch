@@ -43,7 +43,7 @@
    <widget class="QWidget" name="widget" native="true">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>120</x>
       <y>10</y>
       <width>271</width>
       <height>181</height>
@@ -63,7 +63,7 @@
      <bool>false</bool>
     </property>
     <property name="text">
-     <string>asdf</string>
+     <string/>
     </property>
     <property name="alignment">
      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>

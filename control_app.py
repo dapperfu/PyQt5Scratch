@@ -14,8 +14,6 @@ from matplotlib.figure import Figure
 
 Ui_MainWindow, QMainWindow = loadUiType('control_gui.ui')
 
-
-
 class ControlCanvas(FigureCanvas):
     """Ultimately, this is a QWidget (as well as a FigureCanvasAgg, etc.)."""
 
@@ -62,7 +60,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         
     def slider_value_change(self,):
         print(self.horizontalSlider.value())
-#        self.lineEdit.text=str(self.horizontalSlider.value)  
+        self.lineEdit.text=self.horizontalSlider.value() 
         
     def browse_folder(self,):
         QtWidgets.QMessageBox.about(self, "About", """Copyright 2016 Jed Frey""")
