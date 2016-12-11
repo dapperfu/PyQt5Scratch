@@ -19,9 +19,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # access variables, methods etc in the design.py file
         super(self.__class__, self).__init__()
         self.setupUi(self)
-        
+        self.pushButton.clicked.connect(self.browse_folder)
         #self.pushButton.clicked.connect(self.actionAbout)
         
+    def browse_folder(self,):
+        QtWidgets.QMessageBox.about(self, "About", """Copyright 2016 Jed Frey""")
     def actionAbout(self):
         print("Hello World")
         
