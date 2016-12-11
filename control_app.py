@@ -19,6 +19,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         super(self.__class__, self).__init__()
         self.setupUi(self)  # This is defined in design.py file automatically
         
+    def actionAbout(self):
+        QtWidgets.QMessageBox.about(self, "About",
+                                    """Copyright 2016 Jed Frey
+                                    
+This program is a simple GUI example for controls.""")
+        
    
 if __name__ == '__main__':
     import sys
