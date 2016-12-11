@@ -19,10 +19,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # Simple reason why we use it here is that it allows us to
         # access variables, methods etc in the design.py file
         super(self.__class__, self).__init__()
+        
         self.setupUi(self)
         self.pushButton.clicked.connect(self.browse_folder)
-        #self.actionAbout.connect(self.browse_folder)
-        self.statusBar().showMessage("All hail matplotlib!", 5000)
+        self.actionAbout.triggered.connect(self.browse_folder)
+        self.statusBar().showMessage("", 5000)
         #self.pushButton.clicked.connect(self.actionAbout)
         
     def browse_folder(self,):
