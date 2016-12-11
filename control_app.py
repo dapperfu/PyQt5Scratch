@@ -6,7 +6,8 @@ Created on Sun Dec 11 04:50:02 2016
 @author: jafrey
 """
 from PyQt5.uic import loadUiType
-from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5 import QtWidgets
+import sys
 
 Ui_MainWindow, QMainWindow = loadUiType('control_gui.ui')
         
@@ -36,8 +37,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         
    
 if __name__ == '__main__':
-    import sys
-    from PyQt5 import QtWidgets  
     app = QtWidgets.QApplication(sys.argv)  # A new instance of QApplication
     main = MainWindow() 
     main.show()
