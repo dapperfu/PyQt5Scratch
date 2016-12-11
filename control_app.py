@@ -68,18 +68,17 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.statusBar().showMessage("", 5000)
         
         self.fig = Figure()
+        self.plot_axis = self.fig.add_subplot(111)
         
         # Slider changes.
         self.horizontalSlider.valueChanged.connect(self.slider_value_change)
         
 
     def makeplot(self):
+        self.plot_axis.plot(np.random.rand(5))
         
         
-        ax1f1 = fig.add_subplot(111)
-        ax1f1.plot(np.random.rand(5))
-        
-        self.canvas = FigureCanvas(fig)
+        self.canvas = FigureCanvas(self.fig)
         self.mplvl.addWidget(self.canvas)
         self.canvas.draw()
         
