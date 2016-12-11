@@ -21,6 +21,7 @@ class Main(QMainWindow, Ui_MainWindow):
 
     def changefig(self, item):
         text = item.text()
+        print(text)
         self.rmmpl()
         self.addmpl(self.fig_dict[text])
 
