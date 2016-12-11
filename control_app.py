@@ -6,6 +6,7 @@ Created on Sun Dec 11 04:50:02 2016
 @author: jafrey
 """
 from PyQt5.uic import loadUiType
+from PyQt5 import QtCore, QtGui, QtWidgets
 
 Ui_MainWindow, QMainWindow = loadUiType('control_gui.ui')
         
