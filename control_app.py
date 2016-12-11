@@ -59,15 +59,17 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.setupUi(self)
         self.pushButton.clicked.connect(self.browse_folder)
         self.actionAbout.triggered.connect(self.browse_folder)
-        self.actionAbout.setShortcut("Ctrl+Shift+A")        
+        
+        self.actionQuit.triggered.connect(self.close)
+
+
         
         
         self.statusBar().showMessage("", 5000)
         
         # Slider changes.
         self.horizontalSlider.valueChanged.connect(self.slider_value_change)
-        #self.pushButton.clicked.connect(self.actionAbout)
-        
+
     def slider_value_change(self,):
         print(self.horizontalSlider.value())
         self.lineEdit.value=str(self.horizontalSlider.value())
