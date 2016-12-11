@@ -6,3 +6,7 @@ window: mainwindow_test.ui
 dialog: dialog_test.ui
 	pyuic5 dialog_test.ui -o dialog_test.py
 
+
+.PHONY: designer
+designer:
+	designer *.ui &
