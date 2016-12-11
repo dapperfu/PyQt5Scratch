@@ -9,7 +9,35 @@ from PyQt5.uic import loadUiType
 from PyQt5 import QtWidgets
 import sys
 
+from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
+from matplotlib.figure import Figure
+
 Ui_MainWindow, QMainWindow = loadUiType('control_gui.ui')
+
+
+
+class ControlCanvas(FigureCanvas):
+    """Ultimately, this is a QWidget (as well as a FigureCanvasAgg, etc.)."""
+
+    def __init__(self, parent=None, width=5, height=4, dpi=100):
+        fig = Figure(figsize=(width, height), dpi=dpi)
+        self.axes = fig.add_subplot(111)
+        
+        self.compute_initial_figure()
+
+        #
+        FigureCanvas.__init__(self, fig)
+        self.setParent(parent)
+
+        FigureCanvas.setSizePolicy(self,
+                                   QtWidgets.QSizePolicy.Expanding,
+                                   QtWidgets.QSizePolicy.Expanding)
+        FigureCanvas.updateGeometry(self)
+        
+
+    def compute_initial_figure(self):
+        pass
+
         
 class MainWindow(QMainWindow, Ui_MainWindow):  
 #class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
@@ -24,6 +52,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.pushButton.clicked.connect(self.browse_folder)
         self.actionAbout.triggered.connect(self.browse_folder)
         self.statusBar().showMessage("", 5000)
+        self.horizontalSlider.valueChanged.connect(self.browse_folder)
         #self.pushButton.clicked.connect(self.actionAbout)
         
     def browse_folder(self,):
