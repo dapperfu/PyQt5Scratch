@@ -55,6 +55,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         
         
         self.statusBar().showMessage("", 5000)
+        
+        # Slider changes.
         self.horizontalSlider.valueChanged.connect(self.browse_folder)
         #self.pushButton.clicked.connect(self.actionAbout)
         
