@@ -1,16 +1,15 @@
-from PyQt4.uic import loadUiType
+from PyQt5.uic import loadUiType
 
 from matplotlib.figure import Figure
-from matplotlib.backends.backend_qt4agg import (
+from matplotlib.backends.backend_qt5agg import (
     FigureCanvasQTAgg as FigureCanvas,
     NavigationToolbar2QT as NavigationToolbar)
 
 Ui_MainWindow, QMainWindow = loadUiType('window.ui')
-
         
-class Main(QMainWindow, Ui_MainWindow):
+class MainWindow(QMainWindow, Ui_MainWindow):
     def __init__(self, ):
-        super(Main, self).__init__()
+        super(MainWindow, self).__init__()
         self.setupUi(self)
         self.fig_dict = {}
 
@@ -50,7 +49,7 @@ class Main(QMainWindow, Ui_MainWindow):
 
 if __name__ == '__main__':
     import sys
-    from PyQt4 import QtGui
+    from PyQt5 import QtWidgets
     import numpy as np
 
     fig1 = Figure()
@@ -67,8 +66,8 @@ if __name__ == '__main__':
     ax1f3 = fig3.add_subplot(111)
     ax1f3.pcolormesh(np.random.rand(20,20))
 
-    app = QtGui.QApplication(sys.argv)
-    main = Main()
+    app = QtWidgets.QApplication(sys.argv)  # A new instance of QApplication
+    main = MainWindow() 
     main.addfig('One plot', fig1)
     main.addfig('Two plots', fig2)
     main.addfig('Pcolormesh', fig3)
