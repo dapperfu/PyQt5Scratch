@@ -59,12 +59,15 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         super(self.__class__, self).__init__()
         
         self.setupUi(self)
-        self.pushButton.clicked.connect(self.browse_folder)
+        self.pushButton.clicked.connect(self.makeplot)
+        
         self.actionAbout.triggered.connect(self.browse_folder)
         self.actionNew.triggered.connect(self.makeplot)
         self.actionQuit.triggered.connect(self.close)
         
         self.statusBar().showMessage("", 5000)
+        
+        self.fig = Figure()
         
         # Slider changes.
         self.horizontalSlider.valueChanged.connect(self.slider_value_change)
@@ -72,16 +75,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def makeplot(self):
         
-        fig = Figure()
+        
         ax1f1 = fig.add_subplot(111)
         ax1f1.plot(np.random.rand(5))
-        
         
         self.canvas = FigureCanvas(fig)
         self.mplvl.addWidget(self.canvas)
         self.canvas.draw()
-        #self.toolbar = NavigationToolbar(self.canvas, self.mplwindow, coordinates=True)
-        #self.mplvl.addWidget(self.toolbar)
         
 
 
