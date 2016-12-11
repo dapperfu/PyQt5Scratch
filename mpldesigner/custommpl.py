@@ -39,8 +39,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.canvas = FigureCanvas(fig)
         self.mplvl.addWidget(self.canvas)
         self.canvas.draw()
-        self.toolbar = NavigationToolbar(self.canvas, 
-                self.mplwindow, coordinates=True)
+        self.toolbar = NavigationToolbar(self.canvas, self.mplwindow, coordinates=True)
         self.mplvl.addWidget(self.toolbar)
 # This is the alternate toolbar placement. Susbstitute the three lines above
 # for these lines to see the different look.
