@@ -10,13 +10,15 @@ from PyQt5 import QtWidgets
 import sys
 import numpy as np
 
-from matplotlib.figure import Figure
+import matplotlib
+matplotlib.use('Qt5Agg')  
 
+
+from matplotlib.figure import Figure
 from matplotlib.backends.backend_qt5agg import (
     FigureCanvasQTAgg as FigureCanvas,
     NavigationToolbar2QT as NavigationToolbar)
     
-
 Ui_MainWindow, QMainWindow = loadUiType('control_gui.ui')
 
 class ControlCanvas(FigureCanvas):
