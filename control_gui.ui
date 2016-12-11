@@ -68,7 +68,7 @@
      <bool>false</bool>
     </property>
    </widget>
-   <widget class="QListWidget" name="listWidget">
+   <widget class="QListWidget" name="mplfigs">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -77,6 +77,17 @@
       <height>192</height>
      </rect>
     </property>
+   </widget>
+   <widget class="QWidget" name="verticalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>290</y>
+      <width>221</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="mplvl"/>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
