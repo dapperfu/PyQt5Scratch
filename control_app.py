@@ -8,6 +8,7 @@ Created on Sun Dec 11 04:50:02 2016
 from PyQt5.uic import loadUiType
 from PyQt5 import QtWidgets
 import sys
+import numpy as np
 
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.figure import Figure
@@ -35,6 +36,15 @@ class ControlCanvas(FigureCanvas):
 
     def compute_initial_figure(self):
         pass
+    
+class StaticControlCanvas(ControlCanvas):
+    """Simple canvas with a sine plot."""
+
+    def compute_initial_figure(self):
+        t = np.arange(0.0, 3.0, 0.01)
+        s = np.sin(2*np.pi*t)
+        self.axes.plot(t, s)
+
 
         
 class MainWindow(QMainWindow, Ui_MainWindow):  
@@ -60,14 +70,14 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         
     def slider_value_change(self,):
         print(self.horizontalSlider.value())
-        self.lineEdit.text=self.horizontalSlider.value() 
+        self.lineEdit.value=str(self.horizontalSlider.value())
         
     def browse_folder(self,):
         QtWidgets.QMessageBox.about(self, "About", """Copyright 2016 Jed Frey""")
+
     def actionAbout(self):
         print("Hello World")
-        
-    
+
     def actionEaster_Eggs(self,):
         print("Hello Easter Egg")
  #       QtWidgets.QMessageBox.about(self, "About",
