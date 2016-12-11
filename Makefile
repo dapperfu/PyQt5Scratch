@@ -1,7 +1,7 @@
 .PHONY: first
-first: MyFirstQtDesignerApp.ipynb
+first: MyFirstQtDesignerApp.ipynb mainwindow_test.py
 	jupyter nbconvert --to=python MyFirstQtDesignerApp.ipynb
-	python MyFirstQtDesignerApp.py
+	python3 MyFirstQtDesignerApp.py
 
 .PHONY: window
 window: mainwindow_test.ui
