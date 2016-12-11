@@ -23,12 +23,10 @@ class MyMplCanvas(FigureCanvas):
         FigureCanvas.__init__(self, fig)
         self.setParent(parent)
 
-        FigureCanvas.setSizePolicy(self,
-                QSizePolicy.Expanding,
-                QSizePolicy.Expanding)
+        FigureCanvas.setSizePolicy(self, QSizePolicy.Expanding, QSizePolicy.Expanding)
         FigureCanvas.updateGeometry(self)
-
-  def compute_initial_figure(self):
+        
+    def compute_initial_figure(self):
         pass
 
 class MyStaticMplCanvas(MyMplCanvas):
@@ -40,7 +38,7 @@ class MyStaticMplCanvas(MyMplCanvas):
 
 
 class MyDynamicMplCanvas(MyMplCanvas):
-  """A canvas that updates itself every second with a new plot."""
+    """A canvas that updates itself every second with a new plot."""
     def __init__(self, *args, **kwargs):
         MyMplCanvas.__init__(self, *args, **kwargs)
         timer = QtCore.QTimer(self)
