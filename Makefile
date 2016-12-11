@@ -7,8 +7,8 @@ first: MyFirstQtDesignerApp.ipynb mainwindow_test.py
 designer:
 	designer *.ui &
 
-window: mainwindow_test.ui
+mainwindow_test.py: mainwindow_test.ui
 	pyuic5 mainwindow_test.ui -o mainwindow_test.py
 
-dialog: dialog_test.ui
+dialog_test.py: dialog_test.ui
 	pyuic5 dialog_test.ui -o dialog_test.py
