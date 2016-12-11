@@ -17,6 +17,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         fig = Figure()
         self.addmpl(fig)
+        
+    def do_nothing(self, item):
+        for key, value in item.items():
+            if isinstance(value, str):
+                print("{}: {}".format(key, value))
+        print("")                
+            
 
     def changefig(self, item):
         text = item.text()
@@ -40,7 +47,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 #        self.toolbar = NavigationToolbar(self.canvas,
 #                self, coordinates=True)
 #        self.addToolBar(self.toolbar)
-
     def rmmpl(self,):
         self.mplvl.removeWidget(self.canvas)
         self.canvas.close()
