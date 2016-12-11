@@ -51,6 +51,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.setupUi(self)
         self.pushButton.clicked.connect(self.browse_folder)
         self.actionAbout.triggered.connect(self.browse_folder)
+        self.actionAbout.setShortcut("Ctrl+Shift+A")        
+        
+        
         self.statusBar().showMessage("", 5000)
         self.horizontalSlider.valueChanged.connect(self.browse_folder)
         #self.pushButton.clicked.connect(self.actionAbout)
