@@ -63,8 +63,16 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.actionAbout.triggered.connect(self.browse_folder)
         
         self.actionQuit.triggered.connect(self.close)
+        
+        
 
-    def addmpl(self, fig):
+    def makeplot(self):
+        
+        fig1 = Figure()
+    ax1f1 = fig1.add_subplot(111)
+    ax1f1.plot(np.random.rand(5))
+        
+        
         self.canvas = FigureCanvas(fig)
         self.mplvl.addWidget(self.canvas)
         self.canvas.draw()
