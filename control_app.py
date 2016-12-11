@@ -57,8 +57,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.statusBar().showMessage("", 5000)
         
         # Slider changes.
-        self.horizontalSlider.valueChanged.connect(self.browse_folder)
+        self.horizontalSlider.valueChanged.connect(self.slider_value_change)
         #self.pushButton.clicked.connect(self.actionAbout)
+        
+    def slider_value_change(self,):
+        print(self.horizontalSlider.value())
+#        self.lineEdit.text=str(self.horizontalSlider.value)  
         
     def browse_folder(self,):
         QtWidgets.QMessageBox.about(self, "About", """Copyright 2016 Jed Frey""")

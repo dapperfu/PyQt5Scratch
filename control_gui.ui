@@ -59,6 +59,9 @@
       <height>26</height>
      </rect>
     </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
     <property name="text">
      <string>asdf</string>
     </property>
@@ -67,6 +70,9 @@
     </property>
     <property name="dragEnabled">
      <bool>false</bool>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
     </property>
    </widget>
   </widget>
