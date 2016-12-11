@@ -19,7 +19,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         super(self.__class__, self).__init__()
         self.setupUi(self)
         
-        self.pushButton.clicked.connect(self.actionAbout)
+        #self.pushButton.clicked.connect(self.actionAbout)
         
     def actionAbout(self):
         print("Hello World")
