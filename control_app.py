@@ -37,6 +37,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         
    
 if __name__ == '__main__':
+
     app = QtWidgets.QApplication(sys.argv)  # A new instance of QApplication
     main = MainWindow() 
     main.show()
