@@ -7,6 +7,7 @@ from matplotlib.backends.backend_qt4agg import (
 
 Ui_MainWindow, QMainWindow = loadUiType('window.ui')
 
+        
 class Main(QMainWindow, Ui_MainWindow):
     def __init__(self, ):
         super(Main, self).__init__()
