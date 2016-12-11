@@ -2,14 +2,7 @@
 
 # embedding_in_qt5.py --- Simple Qt5 application embedding matplotlib canvases
 #
-# Copyright (C) 2005 Florent Rougon
-#               2006 Darren Dale
-#               2015 Jens H Nielsen
-#
-# This file is an example program for matplotlib. It may be used and
-# modified with no restriction; raw copies as well as modified versions
-# may be distributed without limitation.
-
+# Copyright (C) 2015 Jed Frey
 from __future__ import unicode_literals
 import sys
 import os
