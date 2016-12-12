@@ -29,7 +29,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="verticalLayoutWidget">
+   <widget class="QWidget" name="widget" native="true">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -38,11 +38,19 @@
       <height>581</height>
      </rect>
     </property>
-    <layout class="QVBoxLayout" name="VBoxLayout1">
-     <property name="sizeConstraint">
-      <enum>QLayout::SetMinimumSize</enum>
+    <widget class="QCheckBox" name="checkBox">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>89</width>
+       <height>20</height>
+      </rect>
      </property>
-    </layout>
+     <property name="text">
+      <string>CheckBox</string>
+     </property>
+    </widget>
    </widget>
   </widget>
  </widget>
