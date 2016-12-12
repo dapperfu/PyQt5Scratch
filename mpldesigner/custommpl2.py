@@ -29,6 +29,7 @@ class ControlCanvas(FigureCanvas):
                                    QtWidgets.QSizePolicy.Expanding,
                                    QtWidgets.QSizePolicy.Expanding)
         FigureCanvas.updateGeometry(self)
+        self.update()
 
     def update():
         t = arange(0.0, 3.0, 0.01)
