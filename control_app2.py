@@ -63,7 +63,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.setupUi(self)
         self.pushButton.clicked.connect(self.makeplot)
         
-        self.actionAbout.triggered.connect(self.browse_folder)
+        self.actionAbout.triggered.connect(self.actionAbout)
         self.actionNew.triggered.connect(self.makeplot)
         self.actionQuit.triggered.connect(self.close)
         
@@ -98,7 +98,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         QtWidgets.QMessageBox.about(self, "About", """Copyright 2016 Jed Frey""")
 
     def actionEaster_Eggs(self,):
-        QtWidgets.QMessageBox.about(self, "EasterEgg", """Copyright 2016 Jed Frey""")
+        QtWidgets.QMessageBox.about(self, "EasterEgg", """Here Be Easter Eggs.""")
         
    
 if __name__ == '__main__':
