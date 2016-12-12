@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from PyQt5.uic import loadUiType
 
 from matplotlib.figure import Figure
