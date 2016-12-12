@@ -15,10 +15,7 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="1" column="0">
-     <layout class="QVBoxLayout" name="mplvl_2"/>
-    </item>
-    <item row="0" column="0">
+    <item row="0" column="0" rowspan="2">
      <widget class="QWidget" name="mplwindow" native="true">
       <property name="enabled">
        <bool>true</bool>

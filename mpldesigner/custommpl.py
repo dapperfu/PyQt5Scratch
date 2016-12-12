@@ -20,13 +20,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         fig = Figure()
         self.addmpl(fig)
         
-    def do_nothing(self, item):
-        for key, value in item.items():
-            if isinstance(value, str):
-                print("{}: {}".format(key, value))
-        print("")                
-            
-
     def changefig(self, item):
         text = item.text()
         print("item.text: "+text)
@@ -43,10 +36,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.canvas.draw()
         self.toolbar = NavigationToolbar(self.canvas, self.mplwindow, coordinates=True)
         self.mplvl.addWidget(self.toolbar)
-# This is the alternate toolbar placement. Susbstitute the three lines above
-# for these lines to see the different look.
-#        self.toolbar = NavigationToolbar(self.canvas, self, coordinates=True)
-#        self.addToolBar(self.toolbar)
     def rmmpl(self, *args, **kw_args):
         for arg in args:
             print(arg)
