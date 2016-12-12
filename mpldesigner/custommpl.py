@@ -36,6 +36,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.canvas.draw()
         self.toolbar = NavigationToolbar(self.canvas, self.mplwindow, coordinates=True)
         self.mplvl.addWidget(self.toolbar)
+        
     def rmmpl(self, *args, **kw_args):
         for arg in args:
             print(arg)
