@@ -31,11 +31,10 @@ class ControlCanvas(FigureCanvas):
         
 class MainWindow(QMainWindow, Ui_MainWindow):
     def __init__(self, ):
-        super(self.__class__, self).__init__()
+        super(QMainWindow, self).__init__()
+        super(Ui_MainWindow, self).__init__()
         self.setAttribute(QtCore.Qt.WA_DeleteOnClose)
         self.setWindowTitle("application main window")
-        #cc = ControlCanvas(self)
-        #self.verticalLayout.addWidget(cc)
 
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)  # A new instance of QApplication
