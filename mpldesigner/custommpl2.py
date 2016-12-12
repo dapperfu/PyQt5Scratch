@@ -24,18 +24,15 @@ class ControlCanvas(FigureCanvas):
         
         FigureCanvas.__init__(self, fig)
         self.setParent(parent)
-
         FigureCanvas.setSizePolicy(self,
                                    QtWidgets.QSizePolicy.Expanding,
                                    QtWidgets.QSizePolicy.Expanding)
         
 class MainWindow(QMainWindow, Ui_MainWindow):
     def __init__(self, ):
-        super(QMainWindow, self).__init__()
-        super(Ui_MainWindow, self).__init__()
+        super(self.__class__, self).__init__()
         self.setAttribute(QtCore.Qt.WA_DeleteOnClose)
-        self.setWindowTitle("application main window")
-
+        
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)  # A new instance of QApplication
     main = MainWindow() 
