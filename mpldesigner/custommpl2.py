@@ -28,20 +28,14 @@ class ControlCanvas(FigureCanvas):
         FigureCanvas.setSizePolicy(self,
                                    QtWidgets.QSizePolicy.Expanding,
                                    QtWidgets.QSizePolicy.Expanding)
-        #FigureCanvas.updateGeometry(self)
-
-    def my_update():
-        t = arange(0.0, 3.0, 0.01)
-        s = sin(2*pi*t)
-        self.axes.plot(t, s)
         
 class MainWindow(QMainWindow, Ui_MainWindow):
     def __init__(self, ):
         super(self.__class__, self).__init__()
         self.setAttribute(QtCore.Qt.WA_DeleteOnClose)
         self.setWindowTitle("application main window")
-#        cc = ControlCanvas(self)
- #       self.VBoxLayout1.addWidget(cc)
+        #cc = ControlCanvas(self)
+        #self.verticalLayout.addWidget(cc)
 
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)  # A new instance of QApplication
