@@ -11,7 +11,10 @@ from matplotlib.backends.backend_qt5agg import (
     FigureCanvasQTAgg as FigureCanvas,
     NavigationToolbar2QT as NavigationToolbar)
 
-Ui_MainWindow, QMainWindow = loadUiType('window2.ui')
+#Ui_MainWindow, QMainWindow = loadUiType('window2.ui')
+
+from window2 import Ui_MainWindow
+
 
 class ControlCanvas(FigureCanvas):
     """ Ultimately, this is a QWidget (as well as a FigureCanvasAgg, etc.).
@@ -28,9 +31,10 @@ class ControlCanvas(FigureCanvas):
                                    QtWidgets.QSizePolicy.Expanding,
                                    QtWidgets.QSizePolicy.Expanding)
         
-class MainWindow(QMainWindow, Ui_MainWindow):
+class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self, ):
         super(self.__class__, self).__init__()
+        self.setupUi(self)
         self.setAttribute(QtCore.Qt.WA_DeleteOnClose)
         
 if __name__ == '__main__':
