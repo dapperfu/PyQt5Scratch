@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 from PyQt5.uic import loadUiType
-from PyQt5 import QtWidgets
+from PyQt5 import QtCore, QtWidgets
 import sys
 
 import numpy as np
@@ -38,7 +38,10 @@ class ControlCanvas(FigureCanvas):
 class MainWindow(QMainWindow, Ui_MainWindow):
     def __init__(self, ):
         super(self.__class__, self).__init__()
-        self.canvas1 = ControlCanvas(self)
+        self.setAttribute(QtCore.Qt.WA_DeleteOnClose)
+        self.setWindowTitle("application main window")
+#        cc = ControlCanvas(self)
+ #       self.VBoxLayout1.addWidget(cc)
 
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)  # A new instance of QApplication
