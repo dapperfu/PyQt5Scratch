@@ -13,7 +13,10 @@ matplotlib.use('Qt5Agg')
 
 from PyQt5 import QtCore, QtWidgets
 from numpy import arange, sin, pi
-from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
+from matplotlib.backends.backend_qt5agg import (
+    FigureCanvasQTAgg as FigureCanvas,
+    NavigationToolbar2QT as NavigationToolbar)
+
 from matplotlib.figure import Figure
 
 progname = os.path.basename(sys.argv[0])
@@ -95,8 +98,18 @@ class ApplicationWindow(QtWidgets.QMainWindow):
         l = QtWidgets.QVBoxLayout(self.main_widget)
         sc = MyStaticMplCanvas(self.main_widget, width=5, height=4, dpi=100)
         dc = MyDynamicMplCanvas(self.main_widget, width=5, height=4, dpi=100)
+        
+#        self.canvas = FigureCanvas(fig)
+#        self.mplvl.addWidget(self.canvas)
+#        self.canvas.draw()
+#        self.toolbar = NavigationToolbar(self.canvas, self.mplwindow, coordinates=True)
+#        self.mplvl.addWidget(self.toolbar)
+        
         l.addWidget(sc)
+    
         l.addWidget(dc)
+        
+        toolbar = NavigationToolbar(dc, self.mplwindow, coordinates=True)
 
         self.main_widget.setFocus()
         self.setCentralWidget(self.main_widget)
