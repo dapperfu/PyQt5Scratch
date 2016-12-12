@@ -109,7 +109,8 @@ class ApplicationWindow(QtWidgets.QMainWindow):
     
         l.addWidget(dc)
         
-        toolbar = NavigationToolbar(dc, self.mplwindow, coordinates=True)
+        toolbar = NavigationToolbar(dc, self.main_widget, coordinates=True)
+        l.addWidget(toolbar)
 
         self.main_widget.setFocus()
         self.setCentralWidget(self.main_widget)
