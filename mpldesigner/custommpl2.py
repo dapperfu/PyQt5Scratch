@@ -38,18 +38,20 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.setupUi(self)
         self.setAttribute(QtCore.Qt.WA_DeleteOnClose)
         
-        fig1 = Figure()
-        ax1f1 = fig1.add_subplot(111)
+        fig = Figure()
+        ax1f1 = fig.add_subplot(111)
         ax1f1.plot(np.random.rand(5))
         
         self.canvas = FigureCanvas(fig)        
-        
         self.verticalLayout.addWidget(self.canvas)
         self.canvas.draw()
         self.toolbar = NavigationToolbar(self.canvas, self.widget, coordinates=True)
         self.verticalLayout.addWidget(self.toolbar)
         
-        self.pushButton.clicked.connect(self.makeplot)
+        self.plotButton.clicked.connect(self.makeplot)
+        
+    def makeplot(self):
+         print("Hello World")
     
         
 if __name__ == '__main__':
