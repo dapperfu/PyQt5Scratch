@@ -39,6 +39,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
          print("Hello World")
          print(self.gain.value())
          print(self.tau.value())
+         self.ax1f1.clear()
          self.ax1f1.plot(np.random.rand(5))
          self.canvas.draw()
     
