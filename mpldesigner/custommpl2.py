@@ -36,9 +36,11 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
          print("Hello World")
          K = self.gain.value()
          tau = self.tau.value()
-         
+
+         sys = signal.TransferFunction([K],[tau,1])
+         T, yout = signal.step(sys)
          self.ax.clear()
-         self.ax.plot(np.random.rand(5))
+         self.ax.plot(T,yout)
          self.canvas.draw()
         
 if __name__ == '__main__':
