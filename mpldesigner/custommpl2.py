@@ -14,6 +14,8 @@ from matplotlib.backends.backend_qt5agg import (
 Ui_MainWindow, QMainWindow = loadUiType('window2.ui')
 #from window2 import Ui_MainWindow
 
+import scipy.signal
+
 
 class ControlCanvas(FigureCanvas):
     """ Ultimately, this is a QWidget (as well as a FigureCanvasAgg, etc.).
@@ -36,17 +38,19 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.setupUi(self)
         self.setAttribute(QtCore.Qt.WA_DeleteOnClose)
         
-        
         fig1 = Figure()
         ax1f1 = fig1.add_subplot(111)
         ax1f1.plot(np.random.rand(5))
         
-        self.canvas = FigureCanvas(fig1)        
+        self.canvas = FigureCanvas(fig)        
         
         self.verticalLayout.addWidget(self.canvas)
         self.canvas.draw()
         self.toolbar = NavigationToolbar(self.canvas, self.widget, coordinates=True)
         self.verticalLayout.addWidget(self.toolbar)
+        
+        self.pushButton.clicked.connect(self.makeplot)
+    
         
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)  # A new instance of QApplication

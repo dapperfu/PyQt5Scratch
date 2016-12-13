@@ -98,7 +98,7 @@
     </property>
     <layout class="QFormLayout" name="formLayout">
      <item row="0" column="0">
-      <widget class="QLabel" name="label_2">
+      <widget class="QLabel" name="labelGain">
        <property name="text">
         <string>Gain</string>
        </property>
@@ -112,7 +112,7 @@
       </widget>
      </item>
      <item row="1" column="0">
-      <widget class="QLabel" name="label">
+      <widget class="QLabel" name="labelTau">
        <property name="text">
         <string>Time Constant</string>
        </property>
@@ -126,7 +126,7 @@
       </widget>
      </item>
      <item row="2" column="0">
-      <widget class="QPushButton" name="pushButton_2">
+      <widget class="QPushButton" name="plotButton">
        <property name="text">
         <string>Plot</string>
        </property>
