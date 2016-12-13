@@ -91,12 +91,19 @@
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>30</y>
-      <width>203</width>
-      <height>93</height>
+      <y>40</y>
+      <width>171</width>
+      <height>91</height>
      </rect>
     </property>
     <layout class="QFormLayout" name="formLayout">
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string>Gain</string>
+       </property>
+      </widget>
+     </item>
      <item row="0" column="1">
       <widget class="QDoubleSpinBox" name="gain">
        <property name="value">
@@ -105,7 +112,7 @@
       </widget>
      </item>
      <item row="1" column="0">
-      <widget class="QLineEdit" name="lineEdit_2">
+      <widget class="QLabel" name="label">
        <property name="text">
         <string>Time Constant</string>
        </property>
@@ -118,15 +125,8 @@
        </property>
       </widget>
      </item>
-     <item row="0" column="0">
-      <widget class="QLineEdit" name="lineEdit">
-       <property name="text">
-        <string>Gain</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="0" colspan="2">
-      <widget class="QPushButton" name="pushButton">
+     <item row="2" column="0">
+      <widget class="QPushButton" name="pushButton_2">
        <property name="text">
         <string>Plot</string>
        </property>
