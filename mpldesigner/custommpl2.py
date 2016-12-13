@@ -14,7 +14,7 @@ from matplotlib.backends.backend_qt5agg import (
 Ui_MainWindow, QMainWindow = loadUiType('window2.ui')
 #from window2 import Ui_MainWindow
 
-import scipy.signal
+from scipy import signal
 
 
 class ControlCanvas(FigureCanvas):
