@@ -11,9 +11,8 @@ from matplotlib.backends.backend_qt5agg import (
     FigureCanvasQTAgg as FigureCanvas,
     NavigationToolbar2QT as NavigationToolbar)
 
-#Ui_MainWindow, QMainWindow = loadUiType('window2.ui')
-
-from window2 import Ui_MainWindow
+Ui_MainWindow, QMainWindow = loadUiType('window2.ui')
+#from window2 import Ui_MainWindow
 
 
 class ControlCanvas(FigureCanvas):

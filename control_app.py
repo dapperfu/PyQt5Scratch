@@ -38,10 +38,6 @@ class ControlCanvas(FigureCanvas):
                                    QtWidgets.QSizePolicy.Expanding,
                                    QtWidgets.QSizePolicy.Expanding)
         FigureCanvas.updateGeometry(self)
-        
-
-    def compute_initial_figure(self):
-        pass
     
 class StaticControlCanvas(ControlCanvas):
     """Simple canvas with a sine plot."""
