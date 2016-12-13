@@ -90,10 +90,10 @@
    <widget class="QWidget" name="">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>40</y>
-      <width>171</width>
-      <height>91</height>
+      <x>300</x>
+      <y>60</y>
+      <width>162</width>
+      <height>89</height>
      </rect>
     </property>
     <layout class="QFormLayout" name="formLayout">
