@@ -42,7 +42,6 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         ax1f1 = fig1.add_subplot(111)
         ax1f1.plot(np.random.rand(5))
         
-        
         self.canvas = FigureCanvas(fig1)        
         
         self.verticalLayout.addWidget(self.canvas)
