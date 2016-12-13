@@ -36,7 +36,19 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         super(self.__class__, self).__init__()
         self.setupUi(self)
         self.setAttribute(QtCore.Qt.WA_DeleteOnClose)
-        self.verticalLayout.
+        
+        
+        fig1 = Figure()
+        ax1f1 = fig1.add_subplot(111)
+        ax1f1.plot(np.random.rand(5))
+        
+        
+        self.canvas = FigureCanvas(fig1)        
+        
+        self.verticalLayout.addWidget(self.canvas)
+        self.canvas.draw()
+        self.toolbar = NavigationToolbar(self.canvas, self.mplwindow, coordinates=True)
+        self.mplvl.addWidget(self.toolbar)
         
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)  # A new instance of QApplication
