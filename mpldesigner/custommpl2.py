@@ -16,22 +16,6 @@ Ui_MainWindow, QMainWindow = loadUiType('window2.ui')
 
 from scipy import signal
 
-
-class ControlCanvas(FigureCanvas):
-    """ Ultimately, this is a QWidget (as well as a FigureCanvasAgg, etc.).
-    """
-    def __init__(self, parent=None, width=5, height=4, dpi=100):
-        fig = Figure(figsize=(width, height), dpi=dpi)
-        self.axes = fig.add_subplot(111)
-        # We want the axes cleared every time plot() is called
-        self.axes.hold(False)
-        
-        FigureCanvas.__init__(self, fig)
-        self.setParent(parent)
-        FigureCanvas.setSizePolicy(self,
-                                   QtWidgets.QSizePolicy.Expanding,
-                                   QtWidgets.QSizePolicy.Expanding)
-        
 class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self, ):
         super(self.__class__, self).__init__()
@@ -42,7 +26,8 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.ax1f1 = self.fig.add_subplot(111)
         self.ax1f1.plot(np.random.rand(5))
         
-        self.canvas = FigureCanvas(self.fig)        
+        self.canvas = FigureCanvas(self.fig)
+        
         self.verticalLayout.addWidget(self.canvas)
         self.canvas.draw()
         self.toolbar = NavigationToolbar(self.canvas, self.widget, coordinates=True)
