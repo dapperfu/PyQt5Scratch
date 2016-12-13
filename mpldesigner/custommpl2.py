@@ -52,7 +52,8 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         
     def makeplot(self):
          print("Hello World")
-         print(self.gain.value)
+         print(self.gain.value())
+         print(self.tau.value())
     
         
 if __name__ == '__main__':
