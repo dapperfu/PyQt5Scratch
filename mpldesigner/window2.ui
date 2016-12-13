@@ -10,11 +10,11 @@
     <x>0</x>
     <y>0</y>
     <width>806</width>
-    <height>801</height>
+    <height>721</height>
    </rect>
   </property>
   <property name="sizePolicy">
-   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
     <horstretch>0</horstretch>
     <verstretch>0</verstretch>
    </sizepolicy>
@@ -57,7 +57,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>210</y>
+      <y>120</y>
       <width>781</width>
       <height>581</height>
      </rect>
@@ -91,7 +91,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>100</y>
+      <y>10</y>
       <width>781</width>
       <height>101</height>
      </rect>
@@ -132,13 +132,6 @@
          </property>
         </widget>
        </item>
-       <item row="1" column="0">
-        <widget class="QLabel" name="labelTau">
-         <property name="text">
-          <string>Time Constant</string>
-         </property>
-        </widget>
-       </item>
        <item row="2" column="0">
         <widget class="QPushButton" name="plotButton">
          <property name="text">
@@ -150,6 +143,13 @@
         <widget class="QDoubleSpinBox" name="tau">
          <property name="value">
           <double>1.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="labelTau">
+         <property name="text">
+          <string>Time Constant</string>
          </property>
         </widget>
        </item>
@@ -170,6 +170,13 @@
      </item>
     </layout>
    </widget>
+   <zorder>widget</zorder>
+   <zorder>tau</zorder>
+   <zorder>gain</zorder>
+   <zorder>lineEdit</zorder>
+   <zorder>lineEdit_2</zorder>
+   <zorder>horizontalLayoutWidget</zorder>
+   <zorder>horizontalSpacer</zorder>
   </widget>
  </widget>
  <resources/>

@@ -34,8 +34,9 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         
     def makeplot(self):
          print("Hello World")
-         print(self.gain.value())
-         print(self.tau.value())
+         K = self.gain.value()
+         tau = self.tau.value()
+         
          self.ax.clear()
          self.ax.plot(np.random.rand(5))
          self.canvas.draw()
