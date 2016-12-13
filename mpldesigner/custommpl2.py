@@ -47,8 +47,8 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         
         self.verticalLayout.addWidget(self.canvas)
         self.canvas.draw()
-        self.toolbar = NavigationToolbar(self.canvas, self.mplwindow, coordinates=True)
-        self.mplvl.addWidget(self.toolbar)
+        self.toolbar = NavigationToolbar(self.canvas, self.widget, coordinates=True)
+        self.verticalLayout.addWidget(self.toolbar)
         
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)  # A new instance of QApplication
